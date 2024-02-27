@@ -6,7 +6,7 @@
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>Processing</source>
-        <translation type="unfinished">图片Processing</translation>
+        <translation type="unfinished">Processing</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="39"/>
