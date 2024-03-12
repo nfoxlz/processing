@@ -58,6 +58,7 @@
     <addaction name="actionColorReduction"/>
     <addaction name="actionGBRToGray"/>
     <addaction name="actionGBRToHSV"/>
+    <addaction name="actionLinearTransform"/>
    </widget>
    <widget class="QMenu" name="menu_Edit">
     <property name="title">
@@ -79,10 +80,44 @@
     </property>
     <addaction name="actionPreprocess"/>
    </widget>
+   <widget class="QMenu" name="menuOther">
+    <property name="title">
+     <string>Other</string>
+    </property>
+    <addaction name="actionMakeBorder"/>
+    <addaction name="separator"/>
+    <addaction name="actionCartoon"/>
+   </widget>
+   <widget class="QMenu" name="menuContoursEdge">
+    <property name="title">
+     <string>Contours Edge</string>
+    </property>
+    <addaction name="actionFindContours"/>
+    <addaction name="actionSobel"/>
+    <addaction name="actionScharr"/>
+    <addaction name="actionLaplacian"/>
+    <addaction name="actionCanny"/>
+    <addaction name="actionDifference"/>
+    <addaction name="actionRoberts"/>
+    <addaction name="actionPrewitt"/>
+    <addaction name="actionLoG"/>
+   </widget>
+   <widget class="QMenu" name="menuBlur">
+    <property name="title">
+     <string>Blur</string>
+    </property>
+    <addaction name="actionAverage"/>
+    <addaction name="actionGaussian"/>
+    <addaction name="actionMedian"/>
+    <addaction name="actionBilateral"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
    <addaction name="menuConvertColor"/>
+   <addaction name="menuBlur"/>
+   <addaction name="menuContoursEdge"/>
    <addaction name="menuCamera"/>
+   <addaction name="menuOther"/>
    <addaction name="menuFaceRecognition"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -150,6 +185,86 @@
   <action name="actionPreprocess">
    <property name="text">
     <string>Preprocess</string>
+   </property>
+  </action>
+  <action name="actionMakeBorder">
+   <property name="text">
+    <string>Make Border</string>
+   </property>
+  </action>
+  <action name="actionCartoon">
+   <property name="text">
+    <string>Cartoon</string>
+   </property>
+  </action>
+  <action name="actionFindContours">
+   <property name="text">
+    <string>Find contours</string>
+   </property>
+  </action>
+  <action name="actionAverage">
+   <property name="text">
+    <string>Average</string>
+   </property>
+  </action>
+  <action name="actionGaussian">
+   <property name="text">
+    <string>Gaussian</string>
+   </property>
+  </action>
+  <action name="actionMedian">
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="actionBilateral">
+   <property name="text">
+    <string>Bilateral</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionScharr">
+   <property name="text">
+    <string>Scharr</string>
+   </property>
+  </action>
+  <action name="actionLaplacian">
+   <property name="text">
+    <string>Laplacian</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny</string>
+   </property>
+  </action>
+  <action name="actionDifference">
+   <property name="text">
+    <string>Difference</string>
+   </property>
+  </action>
+  <action name="actionRoberts">
+   <property name="text">
+    <string>Roberts</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionLoG">
+   <property name="text">
+    <string>LoG</string>
+   </property>
+  </action>
+  <action name="actionLinearTransform">
+   <property name="text">
+    <string>Linear Transform</string>
    </property>
   </action>
  </widget>

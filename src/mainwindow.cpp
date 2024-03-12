@@ -210,6 +210,111 @@ void MainWindow::on_actionGBRToHSV_triggered()
         doc->gbrToHsv();
 }
 
+void MainWindow::on_actionLinearTransform_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->linearTransform(1.2, 5);
+}
+
+void MainWindow::on_actionMakeBorder_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->makeBorder(5, 5, 5, 5, cv::BORDER_CONSTANT);
+}
+
+void MainWindow::on_actionFindContours_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->findContours();
+}
+
+void MainWindow::on_actionSobel_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->sobel(CV_16S, 1, 1);
+}
+
+void MainWindow::on_actionScharr_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->scharr(CV_16S, 1, 1);
+}
+
+void MainWindow::on_actionLaplacian_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->laplacian(CV_8U, 3);
+}
+
+void MainWindow::on_actionCanny_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->canny(100, 250);
+}
+
+void MainWindow::on_actionDifference_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->difference();
+}
+
+void MainWindow::on_actionRoberts_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->roberts();
+}
+
+void MainWindow::on_actionPrewitt_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->prewitt(CV_32F);
+}
+
+void MainWindow::on_actionLoG_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->loG(cv::Size(7, 7), 2);
+}
+
+void MainWindow::on_actionAverage_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->blur(cv::Size(3, 3));
+}
+
+void MainWindow::on_actionGaussian_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->gaussianBlur(cv::Size(3, 3), 0);
+}
+
+void MainWindow::on_actionMedian_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->medianBlur(3);
+}
+
+void MainWindow::on_actionBilateral_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr != doc)
+        doc->bilateralFilter(3, 6, 1);
+}
+
 void MainWindow::on_actionMonitor_triggered()
 {
     // cv::VideoCapture cap;
@@ -252,6 +357,23 @@ void MainWindow::on_actionPhotograph_triggered()
         return;
 
     showImageForm(ImageDoc::create(form->captureImage().clone()));
+}
+
+
+void MainWindow::on_actionCartoon_triggered()
+{
+    ImageDoc* doc = getDoc();
+    if (nullptr == doc)
+    {
+        CaptureForm* form = getCapture();
+        if (nullptr == form)
+            return;
+
+        doc = ImageDoc::create(form->captureImage().clone());
+        showImageForm(doc);
+    }
+
+    doc->convertCartoon();
 }
 
 void MainWindow::on_actionPreprocess_triggered()
@@ -302,4 +424,3 @@ void MainWindow::on_actionPreprocess_triggered()
 
     QMessageBox::information(this, tr("information"), tr("The processing succeeded."));
 }
-
